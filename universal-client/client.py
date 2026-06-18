@@ -26,12 +26,12 @@ PROVIDERS: dict[ProviderName, Provider] = {
         "openai-compatible", os.getenv("OLLAMA_BASE_URL"), "ollama", "qwen3:8b"
     ),
     "openai": Provider(
-        "openai-compatible", None, os.getenv("OPENAI_API_KEY"), "gpt-5.5"
+        "openai-compatible", None, os.getenv("OPENAI_API_KEY"), "gpt-5"
     ),
     "anthropic": Provider(
         "anthropic", None, os.getenv("ANTHROPIC_API_KEY"), "claude-sonnet-4-6"
     ),
-    "google": Provider("google", None, os.getenv("GOOGLE_API_KEY"), "gemini-3.5-flash"),
+    "google": Provider("google", None, os.getenv("GOOGLE_API_KEY"), "gemini-2.5-flash"),
 }
 
 
