@@ -13,7 +13,7 @@ Each component is small, standalone, and readable top-to-bottom.
 - Python 3.12 (managed by `uv`)
 - [`uv`](https://docs.astral.sh/uv/) for dependency management
 - [Ollama](https://ollama.com) for the local provider (no API keys required to start)
-- A local model: `ollama pull qwen3.5:8b`
+- A local model: `ollama pull qwen3:8b`
 - Ollama running: `ollama serve` (defaults to `http://localhost:11434`)
 
 Python dependencies (declared in `pyproject.toml`):
@@ -21,6 +21,26 @@ Python dependencies (declared in `pyproject.toml`):
 - `openai` — OpenAI, Ollama, MLX, and any OpenAI-compatible endpoint
 - `anthropic` — Claude
 - `google-genai` — Gemini
+
+## Setup
+
+```bash
+# 1. Install uv (macOS / Linux) — see the uv docs for other platforms
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 2. Clone and enter the repo
+git clone https://github.com/<you>/llm-foundations.git
+cd llm-foundations
+
+# 3. Create the venv and install pinned dependencies from uv.lock
+uv sync
+
+# 4. Start the local provider (Ollama) and pull the default model
+ollama serve &            # runs on http://localhost:11434
+ollama pull qwen3:8b
+```
+
+`uv` reads `.python-version` and `pyproject.toml`, so it provisions Python 3.12 and the dependencies for you — no manual `pip install` or virtualenv activation needed.
 
 ## Run
 

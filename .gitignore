@@ -14,3 +14,8 @@ wheels/
 
 # Local AI assistant context (not part of the portfolio)
 CLAUDE.md
+
+
+#Ignore cursor AI rules
+.cursor/rules/codacy.mdc
+
