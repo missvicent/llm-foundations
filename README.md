@@ -14,7 +14,7 @@ Each component is small, standalone, and readable top-to-bottom.
 - [`uv`](https://docs.astral.sh/uv/) for dependency management
 - [Ollama](https://ollama.com) for the local provider (no API keys required to start)
 - A local model: `ollama pull qwen3:8b`
-- Ollama running: `ollama serve` (defaults to `http://localhost:11434`)
+- Ollama running on `http://localhost:11434`. The macOS app starts it automatically; on Linux or headless setups, run `ollama serve`.
 
 Python dependencies (declared in `pyproject.toml`):
 
@@ -35,8 +35,9 @@ cd llm-foundations
 # 3. Create the venv and install pinned dependencies from uv.lock
 uv sync
 
-# 4. Start the local provider (Ollama) and pull the default model
-ollama serve &            # runs on http://localhost:11434
+# 4. Pull the default model (Ollama serves it on http://localhost:11434).
+#    On macOS the Ollama app starts the server automatically; on Linux,
+#    run `ollama serve &` first.
 ollama pull qwen3:8b
 ```
 
