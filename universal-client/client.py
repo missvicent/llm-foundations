@@ -13,7 +13,7 @@ type ProviderKind = Literal["openai-compatible", "anthropic", "google"]
 type ProviderName = Literal["local", "openai", "anthropic", "google"]
 
 
-@dataclass
+@dataclass(frozen=True)
 class Provider:
     kind: ProviderKind
     base_url: str | None = None
@@ -72,3 +72,8 @@ def complete(
         )
         return response.text or ""
     raise ValueError(f"Unknown provider: {p.kind}")
+
+
+def stream (prompt: str, provider: ProviderName = "local"):
+    p = PROVIDERS[provider]
+    if p.kind == "openai-compatible":
