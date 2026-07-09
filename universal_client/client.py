@@ -13,6 +13,10 @@ from google import genai
 type ProviderKind = Literal["openai-compatible", "anthropic", "google"]
 type ProviderName = Literal["local", "openai", "anthropic", "google"]
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 @dataclass(frozen=True)
 class Provider:
@@ -26,9 +30,7 @@ PROVIDERS: dict[ProviderName, Provider] = {
     "local": Provider(
         "openai-compatible", os.getenv("OLLAMA_BASE_URL"), "ollama", "qwen3:8b"
     ),
-    "openai": Provider(
-        "openai-compatible", None, os.getenv("OPENAI_API_KEY"), "gpt-5"
-    ),
+    "openai": Provider("openai-compatible", None, os.getenv("OPENAI_API_KEY"), "gpt-5"),
     "anthropic": Provider(
         "anthropic", None, os.getenv("ANTHROPIC_API_KEY"), "claude-sonnet-4-6"
     ),
@@ -75,7 +77,9 @@ def complete(
     raise ValueError(f"Unknown provider: {p.kind}")
 
 
-def stream(prompt: str, provider: ProviderName = "local", temperature: float = 0.2) -> Iterator[str]:
+def stream(
+    prompt: str, provider: ProviderName = "local", temperature: float = 0.2
+) -> Iterator[str]:
     p = PROVIDERS[provider]
     if p.kind == "openai-compatible":
         client = OpenAI(base_url=p.base_url, api_key=p.api_key)
@@ -109,7 +113,7 @@ def stream(prompt: str, provider: ProviderName = "local", temperature: float = 0
             contents=[prompt],
             config={
                 "temperature": temperature,
-            }
+            },
         ):
             if chunk.text:
                 yield chunk.text
@@ -118,7 +122,13 @@ def stream(prompt: str, provider: ProviderName = "local", temperature: float = 0
 
 
 if __name__ == "__main__":
-    print(complete("Say hi in one short sentence.", provider="local", temperature=0.2))
-    for chunk in stream("Say hi in one short sentence.", provider="local", temperature=0.2):
+    print(
+        complete(
+            "Say hi in one short sentence in french.", provider="local", temperature=0.2
+        )
+    )
+    for chunk in stream(
+        "Say hi in one short sentence.", provider="local", temperature=0.2
+    ):
         print(chunk, end="", flush=True)
     print()

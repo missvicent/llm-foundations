@@ -1,0 +1,5 @@
+{"text": "INVOICE Acme Corp \u2014 Mar 3 2026. Total due: $1,240.50", "vendor": "Acme Corp", "date": "2026-03-03", "total": 1240.5}
+{"text": "globex intl / inv #88231 / 14-02-2026 / amount USD 99", "vendor": "Globex Intl", "date": "2026-02-14", "total": 99.0}
+{"text": "Receipt \u2014 Initech. Paid 450.00 on 2026/01/22. Thank you!", "vendor": "Initech", "date": "2026-01-22", "total": 450.0}
+{"text": "UMBRELLA LLC :: total 12,000 :: date Jan 5, 2026", "vendor": "Umbrella LLC", "date": "2026-01-05", "total": 12000.0}
+{"text": "Stark Ind. \u2014 net 30 \u2014 issued 2026-04-18 \u2014 balance $3.5k", "vendor": "Stark Ind.", "date": "2026-04-18", "total": 3500.0}
