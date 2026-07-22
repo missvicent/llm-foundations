@@ -51,17 +51,20 @@ def extract(client, text: str, model: str) -> Invoice:
 
 
 def score(local: bool) -> dict:
-    rows = [json.loads(line) for line in Path("../data/invoices.jsonl").read_text().splitlines()]
-    per_field = { "vendor": 0, "date": 0, "total": 0 }
+    rows = [
+        json.loads(line)
+        for line in Path("../data/invoices.jsonl").read_text().splitlines()
+    ]
+    per_field = {"vendor": 0, "date": 0, "total": 0}
     mismatches = []
 
     for r in rows:
         out = extract(make_client(local), r["text"], "8b")
 
         check = {
-            'vendor': vendor_matches(out.vendor, r["vendor"]),
-            'date': date_matches(out.date, r["date"]),
-            'total': total_matches(out.total, r["total"]),
+            "vendor": vendor_matches(out.vendor, r["vendor"]),
+            "date": date_matches(out.date, r["date"]),
+            "total": total_matches(out.total, r["total"]),
         }
 
         for field, match in check.items():
@@ -77,6 +80,7 @@ def score(local: bool) -> dict:
             "per_field_errors": per_field,
             "mismatches": mismatches[:10],
         }
+
 
 if __name__ == "__main__":
     print(score(local=True))

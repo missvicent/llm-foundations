@@ -1,0 +1,30 @@
+{"question": "How much does Acme Corp owe?", "ground_truth": "$1,240.50", "kind": "semantic"}
+{"question": "How many invoices does Globex have?", "ground_truth": "two", "kind": "semantic"}
+{"question": "How much is Factura E001-552?", "ground_truth": "S/ 5,300.00", "kind": "semantic"}
+{"question": "When did Initech settle their outstanding balance?", "ground_truth": "January 22, 2026", "kind": "semantic"}
+{"question": "How was Initech's payment made?", "ground_truth": "wire transfer", "kind": "semantic"}
+{"question": "What amount does Umbrella LLC need to pay?", "ground_truth": "12,000", "kind": "semantic"}
+{"question": "What is the outstanding balance for Stark Industries?", "ground_truth": "$3,500", "kind": "semantic"}
+{"question": "What payment terms did Stark Industries agree to?", "ground_truth": "net 30", "kind": "semantic"}
+{"question": "How much tax was charged on Hooli's invoice?", "ground_truth": "$160.00", "kind": "semantic"}
+{"question": "Is Hooli's invoice past due?", "ground_truth": "yes, 30 days overdue", "kind": "semantic"}
+{"question": "What penalty applies if Hooli pays after May 15?", "ground_truth": "a $50 late fee", "kind": "semantic"}
+{"question": "What is the total on the Wexler invoice?", "ground_truth": "EUR 780,00", "kind": "semantic"}
+{"question": "Does Pine & Co offer an early payment discount?", "ground_truth": "yes, 2% if paid within 10 days (2/10 net 30)", "kind": "semantic"}
+{"question": "In which city was the Textiles Andinos invoice issued?", "ground_truth": "Lima", "kind": "semantic"}
+{"question": "Which Globex invoice was refunded by the credit memo?", "ground_truth": "invoice #88231", "kind": "semantic"}
+{"question": "On what date was invoice #88231 issued?", "ground_truth": "14-02-2026", "kind": "exact"}
+{"question": "What is the credit memo number for the Globex refund?", "ground_truth": "CM-2201", "kind": "exact"}
+{"question": "What is the PO reference on Globex invoice #88232?", "ground_truth": "PO-7741", "kind": "exact"}
+{"question": "What is the RUC for Textiles Andinos SAC?", "ground_truth": "20512345678", "kind": "exact"}
+{"question": "What invoice number is on the Hooli past due notice?", "ground_truth": "INV-4410", "kind": "exact"}
+{"question": "What is the Rechnung number for Wexler GmbH?", "ground_truth": "2026-077", "kind": "exact"}
+{"question": "What is the invoice number for Pine & Co?", "ground_truth": "PC-113", "kind": "exact"}
+{"question": "What are the exact payment terms on invoice PC-113?", "ground_truth": "2/10 net 30", "kind": "exact"}
+{"question": "What is the Factura number for Textiles Andinos?", "ground_truth": "E001-552", "kind": "exact"}
+{"question": "What is the subtotal on invoice INV-4410?", "ground_truth": "$2,000.00", "kind": "exact"}
+{"question": "How much does Nily owe?", "ground_truth": "I don't know", "kind": "unanswerable"}
+{"question": "What is Acme Corp's phone number?", "ground_truth": "I don't know", "kind": "unanswerable"}
+{"question": "How much did Wayne Enterprises pay in 2026?", "ground_truth": "I don't know", "kind": "unanswerable"}
+{"question": "What is the interest rate on the Stark Industries invoice?", "ground_truth": "I don't know", "kind": "unanswerable"}
+{"question": "What was the total revenue collected in Q2 2026?", "ground_truth": "I don't know", "kind": "unanswerable"}
